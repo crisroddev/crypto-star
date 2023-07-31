@@ -22,7 +22,7 @@ const HDWalletProvider = require('truffle-hdwallet-provider');
 
 const fs = require('fs');
 const infuraKey = fs.readFileSync("infuraKey").toString().trim();
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+const memonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -42,11 +42,18 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    develop: {
-      host: "127.0.0.1",     // Localhost (default: none)
-      port: 9545,            // Standard Ethereum port (default: none)
-      network_id: "*",       // Any network (default: none)
-     },
+    // develop: {
+    //   host: "127.0.0.1",     // Localhost (default: none)
+    //   port: 9545,            // Standard Ethereum port (default: none)
+    //   network_id: "*",       // Any network (default: none)
+    //  },
+     sepolia: {
+      provider: () => new HDWalletProvider(memonic, `https://sepolia.infura.io/v3/${infuraKey}`),
+      network_id: 11155111,
+      gas: 4500000,
+      gasPrice: 10000000000
+
+     }
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port

@@ -26,7 +26,7 @@ Truffle v5.10.2 (core: 5.10.2)
 
 5. **Token Address**
 ```
-0x61FBe720F87D08A35471fBD34f6717199337c9A1
+0xf7EeD1DE71C17c564CCf381DcE4350c7238e7E77 -- Sepolia
 ```
 
 
